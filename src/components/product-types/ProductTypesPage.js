@@ -12,7 +12,7 @@ const ProductTypesPage = () => {
 
     useEffect(() => {
         dispatch(Action.getProductTypes());
-    }, []);
+    }, [dispatch]);
 
     const handleRemove = (id) => {
         if (!window.confirm('Do u wanna remove this item?'))
@@ -24,7 +24,7 @@ const ProductTypesPage = () => {
         <div className='container'>
             <h1>Product Types</h1>
             <Link className='btn btn-primary m-3 float-end' to={'/add-type'}>Add Product Type</Link>
-            <table className='table table-bordered table-hover align-middle m3'>
+            <table className='table table-bordered table-hover align-middle m3 text-center'>
                 <thead>
                     <tr>
                         <th style={{ width: '10px' }}>No</th>

@@ -20,7 +20,7 @@ const SalesHistoryPage = () => {
         <div className='container'>
             <h1>Sales History</h1>
             <Link className='btn btn-primary m-3 float-end' to={'/sales'}>Summarize</Link>
-            <table className='table table-bordered table-hover mt-3'>
+            <table className='table table-bordered table-hover mt-3 text-center'>
                 <thead>
                     <tr>
                         <th style={{ width: '10px' }}>No</th>
@@ -37,7 +37,9 @@ const SalesHistoryPage = () => {
                             <td>{products.filter(product => product.id === sale.product_id)[0].name}</td>
                             <td>{sale.sale_price}</td>
                             <td>{sale.tax_amount}</td>
-                            <td>{sale.created_at}</td>
+                            <td>{(new Date(sale.created_at))
+                                .toLocaleDateString('en-US', { timeZone: 'EST' })}
+                            </td>
                         </tr>
                     ))}
                 </tbody>

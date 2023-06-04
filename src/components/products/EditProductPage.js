@@ -23,7 +23,7 @@ const EditProductPage = () => {
     useEffect(() => {
         dispatch(Action.getProduct(id));
         dispatch(Action.getProductTypes());
-    }, []);
+    }, [dispatch, id]);
 
     useEffect(() => {
         setName(product.name || '');
@@ -40,6 +40,7 @@ const EditProductPage = () => {
         if (!window.confirm('Do u wanna save this product?'))
             return;
         const newProduct = new Product({ name, price, typeId });
+        dispatch(Action.validateProductForm(newProduct));
         dispatch(Action.updateProduct(id, newProduct));
     };
 
@@ -73,7 +74,7 @@ const EditProductPage = () => {
                         <div className='error'>{productError.type}</div>
                     )}
                 </div>
-                <button type="submit" className="btn btn-success float-end m-3">Edit Product</button>
+                <button type="submit" className="btn btn-success float-end m-3">Save Product</button>
             </form>
         </div>
     );

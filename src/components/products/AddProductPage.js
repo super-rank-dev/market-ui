@@ -18,7 +18,7 @@ const AddProductPage = () => {
 
     useEffect(() => {
         dispatch(Action.getProductTypes());
-    }, []);
+    }, [dispatch]);
 
     const handleNameChange = (event) => setName(event.target.value);
     const handlePriceChange = (event) => setPrice(event.target.value);

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import * as Action from '../../redux/action';
@@ -37,7 +37,7 @@ const ProductsPage = () => {
         <div className='container'>
             <h1>Products</h1>
             <Link className='btn btn-primary m-3 float-end' to={'/add-product'}>Add Product</Link>
-            <table className='table table-bordered table-hover align-middle'>
+            <table className='table table-bordered table-hover align-middle text-center'>
                 <thead>
                     <tr>
                         <th style={{ width: '10px' }}>No</th>

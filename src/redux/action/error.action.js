@@ -8,7 +8,7 @@ export const validateProductForm = (product) => dispatch => {
         price: 'Input correct price'
     };
     if (product.name.length > 0) msg.name = '';
-    if (product.type_id.length > 0) msg.type = '';
+    if (String(product.type_id).length > 0) msg.type = '';
     if (product.price.length > 0) msg.price = '';
     dispatch({
         type: PRODUCT_ERROR,

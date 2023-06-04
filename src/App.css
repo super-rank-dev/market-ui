@@ -56,6 +56,30 @@ body {
     border-bottom: none;
 }
 
+.home {
+    font-size: 96px;
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 140px;
+    text-shadow: 4px 4px 4px;
+}
+
+.home .name {
+    color: #00a1ff;
+    text-align: center;
+}
+
+.home .author {
+    color: orange;
+    text-align: right;
+}
+
+.home .author span {
+    color: rgb(255, 240, 0);
+    font-size: 48px;
+}
+
 .container {
     width: 50%;
     height: 600px;

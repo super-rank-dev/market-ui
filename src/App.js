@@ -18,6 +18,7 @@ import AddTypePage from './components/product-types/AddTypePage';
 import EditTypePage from './components/product-types/EditTypePage';
 
 import Navbar from './components/layout/Navbar';
+import Landing from './components/layout/Landing';
 
 const App = () => {
     return (
@@ -25,6 +26,7 @@ const App = () => {
             <Router>
                 <Navbar />
                 <Routes>
+                    <Route exact path="/" element={<Landing />} />
                     <Route exact path="/products" element={<ProductsPage />} />
                     <Route exact path="/types" element={<ProductTypesPage />} />
                     <Route exact path="/sales" element={<SalesPage />} />

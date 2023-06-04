@@ -20,7 +20,7 @@ const SalesPage = () => {
         <div className='container'>
             <h1>Sales</h1>
             <Link className='btn btn-primary m-3 float-end' to={'/sales-history'}>History</Link>
-            <table className='table table-bordered table-hover mt-3'>
+            <table className='table table-bordered table-hover mt-3 text-center'>
                 <thead>
                     <tr>
                         <th style={{ width: '10px' }}>No</th>
