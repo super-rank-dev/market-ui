@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Market System Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend code for a market system application. It's built with React and Redux, and it provides a user interface for managing products, product types, and sales.
 
-## Available Scripts
+## Running App
+- Open cmd window in project root directory
+- Run `"npm start"` to start server
+- Server running on `localhost:3000`
 
-In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Architecture
+- config
+    - `key.js`  
+    You can change backend server address here.  
+    Currently connect with `localhost:8000`
+- model
+    - `Product.js`  
+    A class that represents a product.
+    - `ProductType.js`  
+    A class that represents a product type.
+    - `Sale.js`  
+    A class that represents a sale.
+- redux
+    - `index.js`  
+    The main file that combines all the reducers.
+    - action
+        - `index.js`  
+        A file that exports all the action creators.
+        - `error.action.js`  
+        A file that contains the action creators for handling errors.
+        - `products.action.js`  
+        A file that contains the action creators for managing products.
+        - `types.action.js`  
+        A file that contains the action creators for managing product types.
+        - `sales.action.js`  
+        A file that contains the action creators for managing sales.
+    - reducer
+        - `index.js`  
+        The main file that combines all the reducers.
+        - `error.reducer.js`  
+        A reducer that handles errors.
+        - `products.reducer.js`  
+        A reducer that handles product-related actions.
+        - `types.reducer.js`  
+        A reducer that handles product type-related actions.
+        - `sales.reducer.js`  
+        A reducer that handles sales-related actions.
+- components
+    - layout
+        - `Navbar.js`  
+        A component that displays the app's header.
+        - `Footer.js`  
+        A component that displays the app's footer.
+    - products
+        - `Products.js`  
+        A component that displays a list of all the products in the market system, along with details such as the product name, product type, price, and remaining quantity.
+        - `AddProduct.js`  
+        A component that allows the user to add a new product to the market system by entering the product name, product type, price, and quantity.
+        - `EditProduct.js`  
+        A component that allows the user to edit an existing product by changing its name, product type, price, or quantity.
+    - product-types
+        - `ProductTypesPage.js`  
+        A component that displays a list of all the product types in the market system, along with details such as the product type name and the number of products associated with it.
+        - `AddTypePage.js`  
+        A component that allows the user to add a new product type to the market system by entering the product type name.
+        - `EditTypePage.js`  
+        A component that allows the user to edit an existing product type by changing its name.
+    - sales
+        - `SalesPage.js`  
+        A component that summarize all sales history data.
+        - `SalesHistoryPage.js`  
+        A component that displays a list of all the sales made in the market system, along with details such as the date of sale, the product sold, the quantity sold, and the price.

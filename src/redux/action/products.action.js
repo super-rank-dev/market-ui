@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
-import { SERVER_ADDRESS } from "../../config/key";
+import { SERVER_ADDRESS } from '../../config/key';
 
 export const GET_PRODUCTS = '[MARKET SYSTEM] GET PRODUCTS';
 export const ADD_PRODUCT = '[MARKET SYSTEM] ADD PRODUCT';
