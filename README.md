@@ -1,5 +1,7 @@
 # Market System Frontend
 
+## Summary
+
 This is the frontend code for a market system application. It's built with React and Redux, and it provides a user interface for managing products, product types, and sales.
 
 ## Running App
